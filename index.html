@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="Explore a curated toy collection featuring remote-control cars, creative kits, learning toys and playful discoveries at RIVOKI.">
+  <meta property="og:site_name" content="RIVOKI Toys">
+  <meta property="og:title" content="RIVOKI — A better kind of play">
+  <meta property="og:description" content="A considered collection of toys, creative kits and clever finds for curious minds.">
+  <meta property="og:type" content="website">
+  <title>RIVOKI Toys | A Better Kind of Play — V3</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2218%22 fill=%22%23174d48%22/%3E%3Cpath d=%22M32 8 38 26 56 32 38 38 32 56 26 38 8 32 26 26Z%22 fill=%22%23d7eb73%22/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    function handleBrokenImage(img) {
+      if (!img) return;
+      const fallback = img.dataset && img.dataset.fallback;
+      if (fallback && !img.dataset.fallbackTried) {
+        img.dataset.fallbackTried = '1';
+        img.src = fallback;
+        return;
+      }
+      img.alt = '';
+      img.removeAttribute('src');
+      img.classList.add('image-unavailable');
+      if (img.parentElement) img.parentElement.classList.add('image-fallback');
+    }
+  </script>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('rivoki-theme');
+        const preferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = saved || preferred;
+      } catch (_) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
+  <style>
+    :root{--ink:#162c2c;--muted:#667775;--paper:#f5f4ef;--white:#fffefa;--green:#174d48;--green2:#24665d;--lime:#d7eb73;--line:#dedfd7;--peach:#edab88;--shadow:0 18px 50px rgba(28,55,50,.10);--radius:22px;--max:1240px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{cursor:pointer}::selection{background:var(--lime);color:var(--ink)}
+    .announcement{height:34px;background:var(--ink);color:#eff3e5;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:0 16px;text-align:center}.announcement span{color:var(--lime);margin:0 8px}
+    .site-header{height:82px;position:sticky;top:0;z-index:30;background:rgba(245,244,239,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(22,44,44,.08)}.header-inner{height:100%;max-width:var(--max);margin:auto;padding:0 28px;display:flex;align-items:center;gap:34px}.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}.brand-mark{width:36px;height:36px;border-radius:12px;background:var(--green);display:grid;place-items:center;color:var(--lime);box-shadow:0 5px 14px rgba(23,77,72,.18)}.brand-mark svg{width:22px;height:22px}.brand-name{font:800 19px/1 'Manrope',sans-serif;letter-spacing:.13em}.brand-name small{display:block;font:600 8px/1.5 'DM Sans',sans-serif;letter-spacing:.29em;color:var(--muted);margin-top:5px}.nav{display:flex;align-items:center;gap:27px;margin-left:25px;flex:1}.nav a{font-size:12px;color:#536662;font-weight:600;transition:color .2s}.nav a:hover{color:var(--green)}.header-actions{display:flex;align-items:center;gap:10px}.search-wrap{width:205px;height:40px;border:1px solid var(--line);border-radius:99px;display:flex;align-items:center;padding:0 13px;gap:8px;background:rgba(255,255,255,.55)}.search-wrap svg{width:15px;color:#73817c;flex-shrink:0}.search-wrap input{border:0;outline:0;background:transparent;width:100%;font-size:11px;color:var(--ink)}.search-wrap input::placeholder{color:#89938d}.icon-btn{height:40px;min-width:42px;border:1px solid var(--line);border-radius:50%;background:transparent;display:grid;place-items:center;color:var(--ink);position:relative;transition:.2s}.icon-btn:hover{background:var(--white);transform:translateY(-2px)}.icon-btn svg{width:17px;height:17px}.cart-count{position:absolute;right:-3px;top:-3px;background:var(--lime);color:var(--ink);font-size:9px;font-weight:800;width:17px;height:17px;border-radius:50%;display:grid;place-items:center}.menu-toggle{display:none}
+    .container{max-width:var(--max);margin:0 auto;padding-left:28px;padding-right:28px}.hero{padding:50px 0 48px}.hero-shell{min-height:520px;border-radius:30px;background:#e9eee5;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;position:relative}.hero-copy{padding:70px 20px 64px 66px;position:relative;z-index:2}.eyebrow{font-size:10px;letter-spacing:.2em;font-weight:800;text-transform:uppercase;color:var(--green2);display:flex;align-items:center;gap:9px}.eyebrow:before{content:"";display:block;width:24px;height:1px;background:currentColor}.hero h1{font:800 clamp(48px,6.4vw,80px)/.99 'Manrope',sans-serif;letter-spacing:-.065em;margin:27px 0 20px;max-width:540px}.hero h1 em{font-style:normal;color:var(--green2)}.hero-desc{font-size:14px;line-height:1.85;color:#5a6d68;max-width:410px;margin:0 0 30px}.hero-actions{display:flex;align-items:center;gap:17px;flex-wrap:wrap}.btn{height:49px;border:0;border-radius:99px;padding:0 22px;background:var(--green);color:#fff;font-size:11px;font-weight:700;letter-spacing:.02em;display:inline-flex;align-items:center;justify-content:center;gap:12px;transition:transform .25s,background .25s,box-shadow .25s}.btn:hover{transform:translateY(-3px);background:#0d3935;box-shadow:0 11px 25px rgba(23,77,72,.2)}.btn svg{width:15px}.text-link{font-size:11px;font-weight:700;color:var(--green);display:inline-flex;gap:8px;align-items:center}.text-link svg{width:15px;transition:transform .2s}.text-link:hover svg{transform:translateX(4px)}.hero-note{display:flex;align-items:center;gap:11px;margin-top:47px;color:#61716d;font-size:10px}.note-dots{display:flex}.note-dots i{width:22px;height:22px;border-radius:50%;border:2px solid #e9eee5;margin-right:-6px;background:#d6a48d}.note-dots i:nth-child(2){background:#b5c3aa}.note-dots i:nth-child(3){background:#e8ce89}.hero-visual{position:relative;min-height:520px;background:radial-gradient(circle at 52% 47%,#4c7668 0,#285a51 40%,#183f3d 75%);overflow:hidden}.hero-visual:before{content:"";position:absolute;width:450px;height:450px;border:1px solid rgba(228,239,213,.18);border-radius:50%;top:34px;left:50%;transform:translateX(-50%)}.hero-visual:after{content:"";position:absolute;width:560px;height:560px;border:1px solid rgba(228,239,213,.12);border-radius:50%;top:-20px;left:50%;transform:translateX(-50%)}.orbit{position:absolute;z-index:1;border:1px solid rgba(231,241,216,.25);border-radius:50%;width:510px;height:170px;left:50%;top:54%;transform:translate(-50%,-50%) rotate(-18deg)}.hero-orb{position:absolute;width:11px;height:11px;border-radius:50%;background:var(--lime);top:26%;left:19%;box-shadow:0 0 22px rgba(215,235,115,.8)}.hero-star{position:absolute;color:var(--lime);font-size:20px;opacity:.8}.hero-star.one{top:20%;right:19%}.hero-star.two{left:17%;bottom:27%;font-size:13px}.hero-star.three{right:13%;bottom:21%;font-size:12px}.hero-product{position:absolute;z-index:3;width:min(92%,490px);height:350px;left:50%;top:51%;transform:translate(-50%,-50%);filter:drop-shadow(0 25px 25px rgba(0,0,0,.28));animation:float 5s ease-in-out infinite}.hero-product svg{width:100%;height:100%;overflow:visible}.hero-sticker{position:absolute;z-index:4;right:9%;top:15%;width:91px;height:91px;border-radius:50%;background:var(--lime);display:grid;place-items:center;text-align:center;color:var(--ink);font:800 10px/1.35 'Manrope';letter-spacing:.06em;transform:rotate(10deg);box-shadow:0 12px 25px rgba(0,0,0,.16)}.hero-caption{position:absolute;z-index:3;bottom:24px;left:28px;right:28px;display:flex;justify-content:space-between;color:rgba(246,248,234,.75);font-size:9px;letter-spacing:.16em;text-transform:uppercase}.scroll-hint{display:flex;gap:9px;align-items:center}.scroll-hint:before{content:"";width:27px;height:1px;background:currentColor}
+    .trust-row{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);padding:22px 0 25px;gap:18px}.trust-item{display:flex;align-items:center;gap:13px;padding-left:22px;border-right:1px solid var(--line)}.trust-item:first-child{padding-left:5px}.trust-item:last-child{border:0}.trust-icon{width:35px;height:35px;border-radius:11px;background:#e8ebe1;color:var(--green);display:grid;place-items:center;flex-shrink:0}.trust-icon svg{width:17px;height:17px}.trust-item strong{display:block;font-size:11px;margin-bottom:4px}.trust-item span{font-size:9px;color:var(--muted)}
+    .section{padding:88px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:32px}.kicker{font-size:9px;letter-spacing:.2em;color:var(--green2);text-transform:uppercase;font-weight:800;margin-bottom:13px}.section h2{font:800 clamp(31px,4vw,46px)/1.08 'Manrope',sans-serif;letter-spacing:-.055em;margin:0}.section-intro{font-size:12px;line-height:1.7;color:var(--muted);max-width:320px;margin:0 0 2px}
+    .category-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.category-card{border:1px solid var(--line);border-radius:18px;background:var(--white);overflow:hidden;min-height:174px;transition:transform .25s,box-shadow .25s,border-color .25s;cursor:pointer;text-align:left;padding:0;color:var(--ink)}.category-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent}.category-art{height:112px;display:grid;place-items:center;position:relative;overflow:hidden}.category-art:before{content:"";position:absolute;width:105px;height:105px;border-radius:50%;border:1px solid rgba(20,50,45,.12)}.category-art svg{width:80px;height:80px;position:relative;transition:transform .3s}.category-card:hover .category-art svg{transform:scale(1.1) rotate(-4deg)}.cat-tech{background:#d9e8dd}.cat-build{background:#e8e4d5}.cat-soft{background:#f0e1d7}.cat-create{background:#e2e5ed}.cat-outdoor{background:#e4e9d5}.category-info{display:flex;justify-content:space-between;align-items:center;padding:13px 14px}.category-info strong{font-size:11px}.category-info span{font-size:9px;color:#89928c}
+    .products-section{background:#eeeee8}.filter-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.filter-btn{border:1px solid #d7dad1;border-radius:50px;background:transparent;color:#60706b;padding:9px 14px;font-size:10px;font-weight:700;transition:.2s}.filter-btn.active,.filter-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.product-card{background:var(--white);border:1px solid rgba(28,55,50,.07);border-radius:18px;overflow:hidden;position:relative;transition:transform .25s,box-shadow .25s;min-width:0}.product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.product-art{height:230px;display:grid;place-items:center;position:relative;overflow:hidden}.product-art:after{content:"";position:absolute;width:175px;height:175px;border-radius:50%;border:1px solid rgba(30,50,45,.1);top:50%;left:50%;transform:translate(-50%,-50%)}.product-art svg{width:80%;height:80%;max-width:230px;position:relative;z-index:1;transition:transform .35s}.product-card:hover .product-art svg{transform:translateY(-5px) scale(1.04)}.art-car{background:#e3e9df}.art-drone{background:#e4e5ed}.art-tiles{background:#efe6d8}.art-robot{background:#dde9e8}.art-cube{background:#f0e2dc}.art-bunny{background:#e8e8dc}.art-artkit{background:#e5e9d7}.art-racer{background:#e4e5d8}.product-label{position:absolute;left:13px;top:13px;z-index:2;border-radius:50px;background:rgba(255,254,250,.85);padding:6px 9px;font-size:8px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--green)}.wish{position:absolute;right:12px;top:12px;z-index:2;width:30px;height:30px;border:0;border-radius:50%;background:rgba(255,254,250,.83);display:grid;place-items:center;color:#677671;transition:.2s}.wish svg{width:14px}.wish:hover,.wish.liked{color:#c66b64;background:#fff}.product-info{padding:15px 15px 14px}.product-meta{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#8b9790;font-weight:700}.product-title{font:700 13px/1.4 'Manrope',sans-serif;margin:8px 0 11px;min-height:36px}.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}.price{font-weight:800;font-size:13px}.price small{font-size:8px;display:block;color:#8b9790;font-weight:500;margin-top:3px}.add-btn{height:34px;width:34px;border:1px solid #d8ddd3;border-radius:50%;background:transparent;color:var(--green);display:grid;place-items:center;transition:.2s}.add-btn svg{width:15px}.add-btn:hover{background:var(--green);border-color:var(--green);color:#fff;transform:rotate(90deg)}.catalog-note{margin-top:20px;font-size:9px;color:#8a948d;text-align:right}
+    .manifesto{padding:10px 0 88px}.manifesto-card{background:var(--green);border-radius:27px;min-height:310px;padding:48px 55px;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;position:relative;overflow:hidden;color:white}.manifesto-card:after{content:"";position:absolute;width:380px;height:380px;border:1px solid rgba(230,241,213,.15);border-radius:50%;right:-80px;top:-65px;box-shadow:0 0 0 42px rgba(230,241,213,.035),0 0 0 84px rgba(230,241,213,.025)}.manifesto .kicker{color:var(--lime)}.manifesto h2{font:800 clamp(34px,4vw,49px)/1.03 'Manrope';letter-spacing:-.06em;margin:0;max-width:510px}.manifesto h2 em{font-style:normal;color:var(--lime)}.manifesto p{font-size:12px;line-height:1.9;color:rgba(245,249,235,.73);max-width:400px;margin:0 0 20px}.manifesto .text-link{color:var(--lime)}.manifesto-orbit{position:absolute;right:13%;top:50%;transform:translateY(-50%);width:230px;height:230px;border:1px solid rgba(226,239,208,.28);border-radius:50%;display:grid;place-items:center;z-index:1}.manifesto-orbit:before,.manifesto-orbit:after{content:"";position:absolute;border:1px solid rgba(226,239,208,.19);border-radius:50%}.manifesto-orbit:before{inset:21px}.manifesto-orbit:after{inset:47px}.orbit-core{width:92px;height:92px;border-radius:28px;background:var(--lime);color:var(--green);display:grid;place-items:center;transform:rotate(-12deg);box-shadow:0 12px 35px rgba(0,0,0,.22);z-index:2}.orbit-core svg{width:52px;height:52px}
+    .curated-grid{display:grid;grid-template-columns:1.13fr .87fr;gap:17px}.curated-card{min-height:260px;border-radius:22px;overflow:hidden;position:relative;padding:30px;display:flex;flex-direction:column;justify-content:space-between}.curated-card.dark{background:#dbe5dc}.curated-card.warm{background:#eddfd4}.curated-card .small-label{font-size:9px;text-transform:uppercase;letter-spacing:.15em;font-weight:800;color:#54716a}.curated-card h3{font:800 30px/1.05 'Manrope';letter-spacing:-.05em;margin:8px 0 13px;max-width:250px}.curated-card p{font-size:11px;color:#687a74;max-width:250px;line-height:1.7;margin:0}.curated-art{position:absolute;right:20px;bottom:-8px;width:48%;height:82%;display:grid;place-items:center}.curated-art svg{width:100%;height:100%;filter:drop-shadow(0 14px 15px rgba(30,50,45,.12))}.curated-card .text-link{position:relative;z-index:2;margin-top:20px}.curated-card.warm .curated-art{width:44%;right:8px}
+    .wholesale{padding:0 0 88px}.wholesale-card{background:#e3e6de;border:1px solid #d6ddd2;border-radius:24px;padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px}.wholesale-copy{max-width:570px}.wholesale-copy .kicker{margin-bottom:10px}.wholesale-copy h2{font:800 31px/1.08 'Manrope';letter-spacing:-.055em;margin:0 0 12px}.wholesale-copy p{font-size:11px;line-height:1.75;color:#677671;margin:0}.wholesale-side{display:flex;align-items:center;gap:20px}.wholesale-badge{width:100px;height:100px;border-radius:50%;background:var(--lime);display:grid;place-items:center;text-align:center;color:var(--green);font:800 9px/1.4 'Manrope';letter-spacing:.08em;transform:rotate(8deg);flex-shrink:0}
+    .faq-section{padding:0 0 90px}.faq-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:65px}.faq-aside p{font-size:12px;color:var(--muted);line-height:1.8;max-width:260px;margin-top:15px}.faq-list{border-top:1px solid var(--line)}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;background:none;border:0;padding:20px 0;display:flex;align-items:center;justify-content:space-between;text-align:left;color:var(--ink);font-weight:700;font-size:12px}.faq-q span:last-child{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:#e7eae2;color:var(--green);font-size:16px;transition:transform .2s}.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}.faq-a p{font-size:11px;line-height:1.85;color:var(--muted);padding:0 35px 18px 0;margin:0}.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}.faq-item.open .faq-a{max-height:160px}
+    .newsletter{background:#e6e9df;padding:45px 0}.newsletter-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}.newsletter h2{font:800 26px/1.1 'Manrope';letter-spacing:-.05em;margin:0 0 8px}.newsletter p{font-size:10px;color:var(--muted);margin:0}.newsletter-form{display:flex;gap:8px;width:min(100%,390px)}.newsletter-form input{height:46px;border-radius:50px;border:1px solid #d2d9ce;background:rgba(255,255,255,.7);padding:0 17px;outline:0;flex:1;min-width:0;font-size:11px}.newsletter-form input:focus{border-color:var(--green)}.newsletter-form button{height:46px;border:0;border-radius:50px;background:var(--green);color:white;padding:0 18px;font-size:10px;font-weight:700}
+    .footer{background:#142a29;color:#f2f5e9;padding:54px 0 25px}.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px;padding-bottom:45px}.footer .brand-mark{background:var(--lime);color:var(--green)}.footer .brand-name small{color:#a3b3a9}.footer-about p{font-size:10px;line-height:1.9;color:#a9b8af;max-width:245px;margin:18px 0 0}.footer-col strong{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin:4px 0 17px;color:#dce6d7}.footer-col a{display:block;font-size:10px;color:#9fb1a8;margin:0 0 12px;transition:color .2s}.footer-col a:hover{color:var(--lime)}.footer-bottom{border-top:1px solid rgba(233,242,224,.13);padding-top:19px;display:flex;justify-content:space-between;gap:15px;color:#91a49a;font-size:9px}.footer-bottom span:last-child{letter-spacing:.12em;text-transform:uppercase}
+    .drawer-overlay{position:fixed;inset:0;background:rgba(11,27,25,.42);z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}.drawer-overlay.show{opacity:1;pointer-events:auto}.cart-drawer{position:fixed;z-index:61;right:0;top:0;height:100%;width:min(420px,100%);background:var(--white);transform:translateX(102%);transition:transform .3s ease;box-shadow:-20px 0 60px rgba(0,0,0,.14);display:flex;flex-direction:column}.cart-drawer.show{transform:translateX(0)}.drawer-head{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 23px;border-bottom:1px solid var(--line)}.drawer-head strong{font:800 17px 'Manrope'}.close-btn{border:1px solid var(--line);background:transparent;width:34px;height:34px;border-radius:50%;font-size:20px;color:var(--ink)}.cart-items{flex:1;overflow:auto;padding:10px 22px}.cart-empty{height:100%;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:12px}.cart-empty svg{width:38px;height:38px;color:#9da9a1;margin-bottom:12px}.cart-row{display:grid;grid-template-columns:65px 1fr auto;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);align-items:center}.cart-thumb{height:62px;width:65px;border-radius:12px;display:grid;place-items:center;overflow:hidden}.cart-thumb svg{width:57px;height:57px}.cart-row strong{display:block;font-size:11px;line-height:1.4}.cart-row small{display:block;font-size:10px;color:var(--muted);margin-top:5px}.remove-item{border:0;background:none;color:#9d8175;font-size:10px;padding:5px}.drawer-foot{border-top:1px solid var(--line);padding:20px 23px}.subtotal{display:flex;justify-content:space-between;font-size:12px;font-weight:800;margin-bottom:14px}.checkout-btn{width:100%;height:47px;border:0;border-radius:50px;background:var(--green);color:white;font-size:11px;font-weight:800}.drawer-foot p{font-size:9px;color:#89948d;text-align:center;line-height:1.6;margin:11px 0 0}.toast{position:fixed;z-index:80;left:50%;bottom:25px;transform:translate(-50%,20px);background:#152f2c;color:white;border-radius:50px;padding:12px 18px;font-size:11px;box-shadow:0 12px 30px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+    @keyframes float{0%,100%{transform:translate(-50%,-50%) rotate(-1deg)}50%{transform:translate(-50%,-53%) rotate(1deg)}}
+    @media(max-width:1000px){.header-inner{gap:18px}.nav{gap:16px;margin-left:8px}.search-wrap{width:165px}.hero-copy{padding-left:42px}.hero h1{font-size:64px}.hero-visual{min-height:480px}.hero-shell{min-height:480px}.trust-item{padding-left:13px}.products-grid{grid-template-columns:repeat(3,1fr)}.product-art{height:210px}.category-grid{grid-template-columns:repeat(5,1fr);gap:9px}.category-card{min-height:160px}.curated-card{min-height:245px}}
+    @media(max-width:760px){.announcement{font-size:8px;letter-spacing:.12em}.site-header{height:70px}.header-inner{padding:0 18px;gap:12px}.brand-mark{width:33px;height:33px}.brand-name{font-size:17px}.nav{display:none;position:absolute;top:69px;left:0;right:0;background:var(--paper);padding:22px 24px 26px;margin:0;border-bottom:1px solid var(--line);box-shadow:0 15px 25px rgba(20,40,35,.08);flex-direction:column;align-items:flex-start;gap:18px}.nav.open{display:flex}.nav a{font-size:13px}.search-wrap{width:40px;border:0;padding:0;justify-content:center;background:transparent}.search-wrap input{width:0;padding:0;opacity:0;pointer-events:none;position:absolute}.search-wrap svg{width:18px}.menu-toggle{display:grid}.header-actions{margin-left:auto}.container{padding-left:18px;padding-right:18px}.hero{padding:22px 0 27px}.hero-shell{grid-template-columns:1fr;min-height:0}.hero-copy{padding:45px 28px 35px}.hero h1{font-size:clamp(48px,13vw,70px);margin:22px 0 15px}.hero-desc{font-size:12px;max-width:370px}.hero-note{margin-top:30px}.hero-visual{min-height:330px}.hero-product{height:285px;width:94%;top:48%}.hero-visual:before{width:310px;height:310px;top:15px}.hero-visual:after{width:395px;height:395px;top:-25px}.orbit{width:360px;height:125px}.hero-sticker{width:74px;height:74px;font-size:8px;right:8%;top:12%}.hero-caption{font-size:7px;bottom:16px;left:18px;right:18px}.trust-row{grid-template-columns:repeat(2,1fr);gap:17px 9px;padding:20px 0}.trust-item{border:0;padding-left:0}.trust-item:first-child{padding-left:0}.trust-item strong{font-size:10px}.trust-item span{font-size:8px}.section{padding:62px 0}.section-head{align-items:flex-start;flex-direction:column;margin-bottom:24px;gap:13px}.section-intro{max-width:370px}.category-grid{grid-template-columns:repeat(2,1fr);gap:11px}.category-card{min-height:155px}.category-art{height:104px}.category-card:last-child{grid-column:span 2}.products-grid{grid-template-columns:repeat(2,1fr);gap:10px}.product-art{height:170px}.product-info{padding:12px}.product-title{font-size:11px;min-height:32px}.product-meta{font-size:7px}.price{font-size:12px}.add-btn{width:31px;height:31px}.filter-row{gap:6px}.filter-btn{padding:8px 11px;font-size:9px}.catalog-note{text-align:left;font-size:8px}.manifesto{padding:0 0 62px}.manifesto-card{grid-template-columns:1fr;min-height:0;padding:37px 28px 190px;gap:18px}.manifesto h2{font-size:39px}.manifesto p{font-size:11px}.manifesto-orbit{width:165px;height:165px;top:auto;bottom:-36px;right:12%;transform:none}.orbit-core{width:66px;height:66px;border-radius:20px}.orbit-core svg{width:38px}.curated-grid{grid-template-columns:1fr;gap:12px}.curated-card{min-height:230px;padding:24px}.curated-card h3{font-size:27px}.curated-art{width:43%;height:78%}.curated-card.warm .curated-art{width:40%}.wholesale{padding:0 0 62px}.wholesale-card{padding:27px 24px;align-items:flex-start;flex-direction:column}.wholesale-copy h2{font-size:27px}.wholesale-side{width:100%;justify-content:space-between}.wholesale-badge{width:76px;height:76px;font-size:8px}.faq-section{padding-bottom:65px}.faq-layout{grid-template-columns:1fr;gap:20px}.faq-aside p{max-width:380px}.faq-q{font-size:11px;padding:17px 0}.faq-a p{font-size:10px}.newsletter{padding:35px 0}.newsletter-inner{align-items:flex-start;flex-direction:column}.newsletter h2{font-size:24px}.newsletter-form{width:100%}.footer{padding:42px 0 20px}.footer-main{grid-template-columns:1fr 1fr;gap:28px 18px;padding-bottom:30px}.footer-about{grid-column:span 2}.footer-about p{max-width:300px}.footer-bottom{flex-direction:column;font-size:8px;gap:8px}}
+    @media(max-width:380px){.product-art{height:145px}.hero-actions .btn{height:45px;padding:0 17px}.hero-actions{gap:12px}.trust-icon{width:30px;height:30px}.trust-item{gap:8px}.category-info{padding:11px}.category-info strong{font-size:10px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+    /* ===== RIVOKI V2: editorial finish, real photography & adaptive themes ===== */
+    :root{
+      color-scheme:light;
+      --surface:#eeeee8;--surface-2:#e9eee5;--surface-3:#e3e6de;--deep:#142a29;
+      --hero-ink:#183f3d;--soft-line:rgba(22,44,44,.10);
+    }
+    :root[data-theme="dark"]{
+      color-scheme:dark;
+      --ink:#edf4ef;--muted:#aab9b2;--paper:#101a18;--white:#182622;
+      --green:#28675b;--green2:#9acdb8;--lime:#d9ed83;--line:#2c3e38;
+      --surface:#14221f;--surface-2:#1a2c27;--surface-3:#20342e;--deep:#091310;
+      --hero-ink:#081512;--soft-line:rgba(230,242,232,.1);
+      --shadow:0 22px 60px rgba(0,0,0,.34);
+    }
+    html{background:var(--paper)}
+    body{background:var(--paper);color:var(--ink);transition:background-color .55s cubic-bezier(.22,1,.36,1),color .55s cubic-bezier(.22,1,.36,1)}
+    .announcement{background:var(--deep);color:#eff3e5}
+    .site-header{background:color-mix(in srgb,var(--paper) 91%,transparent);border-bottom-color:var(--soft-line);transition:background-color .55s,border-color .55s}
+    .nav a{color:var(--muted)}.nav a:hover{color:var(--green2)}
+    .search-wrap{background:color-mix(in srgb,var(--white) 84%,transparent);border-color:var(--line);backdrop-filter:blur(12px)}
+    .search-wrap svg,.search-wrap input::placeholder{color:var(--muted)}
+    .icon-btn:hover{background:var(--surface-2)}
+    .hero-shell{background:var(--surface-2);transition:background-color .55s}
+    .hero-copy{color:var(--ink)}
+    .hero h1,.section h2,.manifesto h2,.curated-card h3,.wholesale-copy h2,.newsletter h2,.faq-aside h2{
+      font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.025em;
+    }
+    .hero h1{line-height:1.02;letter-spacing:-.035em}
+    .hero h1 em{font-style:italic;color:var(--green2)}
+    .hero-desc,.hero-note{color:var(--muted)}
+    .note-dots i{border-color:var(--surface-2)}
+    .hero-visual{background:radial-gradient(circle at 52% 47%,#4c7668 0,#285a51 40%,var(--hero-ink) 75%)}
+    .hero-product{
+      width:min(82%,440px);height:300px;padding:12px;border-radius:30px;
+      background:#f6f5f0;border:1px solid rgba(255,255,255,.62);
+      box-shadow:0 34px 65px rgba(0,0,0,.27);filter:none;overflow:hidden;
+    }
+    .hero-photo{width:100%;height:100%;display:block;object-fit:contain;border-radius:20px}
+    .trust-icon{background:var(--surface-2);color:var(--green2)}
+    .section h2{line-height:1.06}
+    .category-card{background:var(--white);border-color:var(--line);transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s,border-color .5s,background-color .5s}
+    .category-art{height:150px;display:block;background:var(--surface-2)}
+    .category-art:before{display:none}
+    .category-art img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1),filter .7s}
+    .category-card:hover .category-art img{transform:scale(1.08);filter:saturate(1.08)}
+    .category-info{min-height:55px}
+    .category-info span{color:var(--muted)}
+    .products-section{background:var(--surface);transition:background-color .55s}
+    .filter-btn{border-color:var(--line);color:var(--muted)}
+    .filter-btn.active,.filter-btn:hover{background:var(--green);border-color:var(--green);color:#fff}
+    .product-card{background:var(--white);border-color:var(--line);transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s,background-color .55s,border-color .55s}
+    .product-art{height:235px;display:block;background:var(--surface-2)}
+    .product-art:after{display:none}
+    .product-photo{display:block;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1),filter .65s}
+    .product-card:hover .product-photo{transform:scale(1.055);filter:saturate(1.06)}
+    .art-car .product-photo,.art-drone .product-photo,.art-robot .product-photo,.art-cube .product-photo{object-fit:contain;padding:12px;background:#fff}
+    .art-kite .product-photo{object-position:center 42%}
+    .product-meta,.price small{color:var(--muted)}
+    .wish{background:color-mix(in srgb,var(--white) 89%,transparent);color:var(--muted);backdrop-filter:blur(10px)}
+    .add-btn{border-color:var(--line);color:var(--green2)}
+    .catalog-note{color:var(--muted)}
+    .manifesto-card{background:var(--green)}
+    .curated-card.dark{background:var(--surface-2)}.curated-card.warm{background:var(--surface-3)}
+    .curated-card .small-label{color:var(--green2)}.curated-card p{color:var(--muted)}
+    .wholesale-card{background:var(--surface-2);border-color:var(--line)}
+    .wholesale-copy p{color:var(--muted)}
+    .faq-q{color:var(--ink)}.faq-q span:last-child{background:var(--surface-2);color:var(--green2)}
+    .newsletter{background:var(--surface-2)}
+    .newsletter-form input{background:var(--white);border-color:var(--line);color:var(--ink)}
+    .footer{background:var(--deep)}
+    .cart-drawer{background:var(--white);color:var(--ink)}
+    .cart-thumb{border-radius:12px;overflow:hidden}.cart-thumb img{width:100%;height:100%;display:block;object-fit:cover}
+    .drawer-foot p{color:var(--muted)}
+    .toast{background:var(--deep);color:#f4f7ee}
+    .image-credit{border-top:1px solid rgba(233,242,224,.13);padding-top:14px;color:#8fa59a;font-size:9px;line-height:1.7}
+    .theme-toggle{
+      position:relative;isolation:isolate;overflow:hidden;width:42px;height:42px;flex:0 0 42px;
+      display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--muted) 28%,transparent);
+      border-radius:50%;color:var(--ink);background:color-mix(in srgb,var(--white) 72%,transparent);
+      backdrop-filter:blur(18px) saturate(1.45);-webkit-backdrop-filter:blur(18px) saturate(1.45);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 4px 12px rgba(20,35,30,.05);
+      transition:transform .45s cubic-bezier(.22,1,.36,1),background-color .5s,border-color .5s,color .5s;
+    }
+    .theme-toggle:hover{transform:translateY(-2px) scale(1.035);border-color:var(--green2)}
+    .theme-toggle:active{transform:scale(.9)}
+    .theme-toggle svg{position:absolute;width:18px;height:18px;transition:transform .72s cubic-bezier(.22,1,.36,1),opacity .35s;}
+    .theme-sun{opacity:1;transform:rotate(0) scale(1)}.theme-moon{opacity:0;transform:rotate(-65deg) scale(.45)}
+    :root[data-theme="dark"] .theme-sun{opacity:0;transform:rotate(75deg) scale(.45)}
+    :root[data-theme="dark"] .theme-moon{opacity:1;transform:rotate(0) scale(1)}
+    .theme-toggle-glow{position:absolute;inset:-60%;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(215,235,115,.26),transparent 62%);opacity:0;transition:opacity .45s}
+    .theme-toggle:hover .theme-toggle-glow{opacity:1}
+    .theme-toggle:focus-visible{outline:2px solid var(--green2);outline-offset:3px}
+    ::view-transition-group(root){animation-duration:.82s;animation-timing-function:cubic-bezier(.22,1,.36,1)}
+    ::view-transition-image-pair(root){isolation:isolate}
+    ::view-transition-old(root){z-index:1;animation:none;mix-blend-mode:normal}
+    ::view-transition-new(root){z-index:2;mix-blend-mode:normal;animation:themeReveal .9s cubic-bezier(.22,1,.36,1) both}
+    @keyframes themeReveal{from{clip-path:circle(0 at var(--theme-x,calc(100% - 34px)) var(--theme-y,42px))}to{clip-path:circle(170vmax at var(--theme-x,calc(100% - 34px)) var(--theme-y,42px))}}
+    @media(max-width:1000px){.header-inner{gap:16px}.nav{gap:13px;margin-left:5px}.search-wrap{width:160px}.category-grid{gap:10px}.category-art{height:135px}}
+    @media(max-width:760px){.theme-toggle{width:38px;height:38px;flex-basis:38px}.category-art{height:118px}.product-art{height:180px}.hero-product{height:250px;width:min(86%,390px);padding:9px}.category-grid{gap:11px}}
+    @media(max-width:380px){.theme-toggle{width:35px;height:35px;flex-basis:35px}.category-art{height:108px}}
+    @media(prefers-reduced-motion:reduce){::view-transition-new(root){animation:none!important} .theme-toggle,.theme-toggle svg{transition:none!important}}
+
+
+    /* Photo loading resilience: use a second real photo first, then a designed fallback. */
+    .hero-product.image-fallback,.category-art.image-fallback,.product-art.image-fallback,.cart-thumb.image-fallback{
+      position:relative;display:grid;place-items:center;overflow:hidden;
+      background-image:radial-gradient(circle at 28% 24%,rgba(215,235,115,.36),transparent 46%),linear-gradient(135deg,#dce7dc,#b8cdc1 55%,#8fa99c);
+    }
+    .hero-product.image-fallback{border-radius:30px;min-height:220px}
+    .category-art.image-fallback{background-image:linear-gradient(135deg,#e9eee5,#c9d9ce)}
+    .product-art.image-fallback{background-image:linear-gradient(135deg,#e8eee6,#c4d4ca)}
+    .cart-thumb.image-fallback{background-image:linear-gradient(135deg,#e7eee7,#c8d9cf)}
+    .hero-product.image-fallback::after,.category-art.image-fallback::after,.product-art.image-fallback::after,.cart-thumb.image-fallback::after{
+      content:"✦";position:absolute;inset:0;display:grid;place-items:center;
+      color:#24665d;font:500 clamp(34px,6vw,68px) 'Fraunces',Georgia,serif;opacity:.66;
+      text-shadow:0 10px 24px rgba(23,77,72,.12);pointer-events:none;
+    }
+    .cart-thumb.image-fallback::after{font-size:25px}
+    .image-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+  </style>
+</head>
+<body>
+  <div class="announcement">A little more wonder, in every box <span>✳</span> Explore the latest collection</div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Rivoki home">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.7 14.1 9.9 21.3 12l-7.2 2.1L12 21.3l-2.1-7.2L2.7 12l7.2-2.1L12 2.7Z" fill="currentColor"/><circle cx="18.7" cy="5.2" r="1.4" fill="currentColor"/></svg></span>
+        <span class="brand-name">RIVOKI<small>PLAY, THOUGHTFULLY</small></span>
+      </a>
+      <nav class="nav" id="mainNav"><a href="#shop">Shop all</a><a href="#categories">Categories</a><a href="#story">Our approach</a><a href="#wholesale">Wholesale</a><a href="#faq">Help</a></nav>
+      <div class="header-actions">
+        <label class="search-wrap" aria-label="Search products"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input id="searchInput" type="search" placeholder="Find something..." autocomplete="off"></label>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+          <span class="theme-toggle-glow" aria-hidden="true"></span>
+          <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.7 8.7 0 1 0 20.2 15.2Z"/><path d="m16.8 4.2.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6.6-1.7Z" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <button class="icon-btn" id="cartOpen" aria-label="Open shopping bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="cart-count" id="cartCount">0</span></button>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <div class="eyebrow">The curious collection · 2026</div>
+          <h1>A better<br>kind of <em>play.</em></h1>
+          <p class="hero-desc">Discover clever little things, creative kits and unexpected favourites. A considered collection for curious minds of every age.</p>
+          <div class="hero-actions"><a class="btn" href="#shop">Explore the collection <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><a class="text-link" href="#categories">Browse categories <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+          <div class="hero-note"><span class="note-dots"><i></i><i></i><i></i></span><span>Small discoveries. Big imagination.</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Featured remote-control toy car photograph">
+          <div class="hero-orb"></div><span class="hero-star one">✳</span><span class="hero-star two">✦</span><span class="hero-star three">✧</span><div class="orbit"></div>
+          <div class="hero-product">
+            <img class="hero-photo" src="https://images.unsplash.com/photo-1519314069741-9f69a9daddfa?auto=format&fit=crop&w=1400&q=85" data-fallback="https://images.unsplash.com/photo-1519314069741-9f69a9daddfa?auto=format&fit=crop&w=1100&q=85" alt="Remote-control toy car on a tabletop" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)">
+          </div>
+          <div class="hero-sticker">FIND YOUR<br>NEXT<br>FAVOURITE ✳</div>
+          <div class="hero-caption"><span>Rivoki / Curated playthings</span><span class="scroll-hint">Scroll to explore</span></div>
+        </div>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><span class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 19 6v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><strong>Thoughtful selection</strong><span>Interesting finds, well chosen</span></div></div>
+        <div class="trust-item"><span class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v11H3zM14 10h4l3 3v5h-7z"/><circle cx="7.5" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></span><div><strong>Delivery, made clear</strong><span>Know what to expect</span></div></div>
+        <div class="trust-item"><span class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v14H4zM8 9h8M8 13h5"/><path d="m14 17 2 2 4-4"/></svg></span><div><strong>Easy discovery</strong><span>Find the right kind of fun</span></div></div>
+        <div class="trust-item"><span class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg></span><div><strong>Play without limits</strong><span>Ideas for every imagination</span></div></div>
+      </div>
+    </section>
+
+    <section class="section container" id="categories">
+      <div class="section-head reveal"><div><div class="kicker">A world of possibilities</div><h2>Find your kind<br>of wonder.</h2></div><p class="section-intro">From clever gadgets to creative play, explore a collection that makes discovering something new feel effortless.</p></div>
+      <div class="category-grid reveal">
+        <button class="category-card" data-filter="tech"><div class="category-art cat-tech"><img src="https://images.unsplash.com/photo-1527612820672-5b56351f7346?auto=format&fit=crop&w=1000&q=85" data-fallback="https://images.unsplash.com/photo-1519314069741-9f69a9daddfa?auto=format&fit=crop&w=1400&q=85" alt="Remote-control toy car on a track" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)"></div><div class="category-info"><strong>RC & Tech</strong><span>01 ↗</span></div></button>
+        <button class="category-card" data-filter="building"><div class="category-art cat-build"><img src="https://images.unsplash.com/photo-1568828668638-b1b4014d91a2?auto=format&fit=crop&w=1100&q=85" data-fallback="https://images.unsplash.com/photo-1668626781268-8b988c940dc7?auto=format&fit=crop&w=1100&q=85" alt="Wooden construction blocks" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)"></div><div class="category-info"><strong>Build & STEM</strong><span>02 ↗</span></div></button>
+        <button class="category-card" data-filter="soft"><div class="category-art cat-soft"><img src="https://images.unsplash.com/photo-1776945537888-bfcb5ad2da16?auto=format&fit=crop&w=1100&q=85" data-fallback="https://images.unsplash.com/photo-1519314069741-9f69a9daddfa?auto=format&fit=crop&w=1100&q=85" alt="Plush toys on display" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)"></div><div class="category-info"><strong>Soft Companions</strong><span>03 ↗</span></div></button>
+        <button class="category-card" data-filter="creative"><div class="category-art cat-create"><img src="https://images.unsplash.com/photo-1771440047710-0cecac3c9df2?auto=format&fit=crop&w=1100&q=85" data-fallback="https://images.unsplash.com/photo-1676294537982-89bca9f84dc0?auto=format&fit=crop&w=1100&q=85" alt="Hands working on a craft project with art supplies" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)"></div><div class="category-info"><strong>Creative Studio</strong><span>04 ↗</span></div></button>
+        <button class="category-card" data-filter="outdoor"><div class="category-art cat-outdoor"><img src="https://images.unsplash.com/photo-1757743066599-193b467c35f1?auto=format&fit=crop&w=1100&q=85" data-fallback="https://images.unsplash.com/photo-1527612820672-5b56351f7346?auto=format&fit=crop&w=1000&q=85" alt="A colourful kite flying against a cloudy sky" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)"></div><div class="category-info"><strong>Outdoor & More</strong><span>05 ↗</span></div></button>
+      </div>
+    </section>
+
+    <section class="products-section" id="shop">
+      <div class="section container">
+        <div class="section-head reveal"><div><div class="kicker">The good stuff</div><h2>Picked for play.</h2></div><p class="section-intro">A few favourites from the Rivoki shelf. Filter the collection or search for something specific.</p></div>
+        <div class="filter-row reveal" id="filterRow"><button class="filter-btn active" data-filter="all">All finds</button><button class="filter-btn" data-filter="tech">RC & Tech</button><button class="filter-btn" data-filter="building">Build & STEM</button><button class="filter-btn" data-filter="soft">Soft Toys</button><button class="filter-btn" data-filter="creative">Creative</button><button class="filter-btn" data-filter="outdoor">Outdoor</button></div>
+        <div class="products-grid reveal" id="productsGrid">
+          <article class="product-card" data-category="tech" data-name="drift x remote control car">
+            <div class="product-art art-car"><span class="product-label">Bestseller</span><button class="wish" aria-label="Add Drift X to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 8.7c0 5.2-8.8 11-8.8 11S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.3Z"/></svg></button>
+              <img class="product-photo" src="https://images.unsplash.com/photo-1519314069741-9f69a9daddfa?auto=format&fit=crop&w=1100&q=85" data-fallback="https://images.unsplash.com/photo-1527612820672-5b56351f7346?auto=format&fit=crop&w=1000&q=85" alt="Remote-control toy racer" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)">
+            </div><div class="product-info"><div class="product-meta">RC & Tech · Ages 6+</div><h3 class="product-title">Drift X Remote Control Racer</h3><div class="product-bottom"><div class="price">PKR 3,490<small>Demo price</small></div><button class="add-btn" data-add="drift" aria-label="Add Drift X to bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+          </article>
+          <article class="product-card" data-category="tech" data-name="orbit mini quad drone"><div class="product-art art-drone"><span class="product-label">New arrival</span><button class="wish" aria-label="Add Orbit to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 8.7c0 5.2-8.8 11-8.8 11S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.3Z"/></svg></button>
+            <img class="product-photo" src="https://images.unsplash.com/photo-1743357017918-84b2530f4cdb?auto=format&fit=crop&w=1100&q=85" data-fallback="https://images.unsplash.com/photo-1616857002717-d337600d15ac?auto=format&fit=crop&w=1100&q=85" alt="Compact toy quadcopter drone" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)">
+          </div><div class="product-info"><div class="product-meta">RC & Tech · Ages 8+</div><h3 class="product-title">Orbit Mini Quadcopter</h3><div class="product-bottom"><div class="price">PKR 7,900<small>Demo price</small></div><button class="add-btn" data-add="orbit" aria-label="Add Orbit to bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+          </article>
+          <article class="product-card" data-category="building" data-name="buildlab magnetic tiles 60 piece set"><div class="product-art art-tiles"><span class="product-label">Creative pick</span><button class="wish" aria-label="Add BuildLab to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 8.7c0 5.2-8.8 11-8.8 11S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.3Z"/></svg></button>
+            <img class="product-photo" src="https://m.media-amazon.com/images/I/81%2Bh7Sz1DAL._AC_SL1500_.jpg" data-fallback="https://images.unsplash.com/photo-1568828668638-b1b4014d91a2?auto=format&fit=crop&w=1100&q=85" alt="Colourful magnetic construction tiles" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)">
+          </div><div class="product-info"><div class="product-meta">Build & STEM · Ages 3+</div><h3 class="product-title">BuildLab Magnetic Tiles · 60 pcs</h3><div class="product-bottom"><div class="price">PKR 4,250<small>Demo price</small></div><button class="add-btn" data-add="buildlab" aria-label="Add BuildLab to bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+          </article>
+          <article class="product-card" data-category="tech" data-name="robo pal interactive robot"><div class="product-art art-robot"><span class="product-label">Staff pick</span><button class="wish" aria-label="Add Robo Pal to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 8.7c0 5.2-8.8 11-8.8 11S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.3Z"/></svg></button>
+            <img class="product-photo" src="https://images.unsplash.com/photo-1603356033288-acfcb54801e6?auto=format&fit=crop&w=1100&q=85" data-fallback="https://images.unsplash.com/photo-1616857002717-d337600d15ac?auto=format&fit=crop&w=1100&q=85" alt="Blue and yellow interactive toy robot" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)">
+          </div><div class="product-info"><div class="product-meta">RC & Tech · Ages 5+</div><h3 class="product-title">Robo Pal Interactive Bot</h3><div class="product-bottom"><div class="price">PKR 5,600<small>Demo price</small></div><button class="add-btn" data-add="robopal" aria-label="Add Robo Pal to bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+          </article>
+          <article class="product-card" data-category="building" data-name="neo cube speed puzzle"><div class="product-art art-cube"><span class="product-label">Pocket-sized fun</span><button class="wish" aria-label="Add NeoCube to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 8.7c0 5.2-8.8 11-8.8 11S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.3Z"/></svg></button>
+            <img class="product-photo" src="https://www.variantes.com/36840-large_default/cube-3x3-twisty-stickerless.jpg" data-fallback="https://images.unsplash.com/photo-1668626781268-8b988c940dc7?auto=format&fit=crop&w=1100&q=85" alt="Colourful twisty puzzle cube" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)">
+          </div><div class="product-info"><div class="product-meta">Build & STEM · Ages 6+</div><h3 class="product-title">NeoCube Speed Puzzle</h3><div class="product-bottom"><div class="price">PKR 1,250<small>Demo price</small></div><button class="add-btn" data-add="neocube" aria-label="Add NeoCube to bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+          </article>
+          <article class="product-card" data-category="soft" data-name="milo the soft bunny plush toy"><div class="product-art art-bunny"><span class="product-label">A little comfort</span><button class="wish" aria-label="Add Milo to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 8.7c0 5.2-8.8 11-8.8 11S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.3Z"/></svg></button>
+            <img class="product-photo" src="https://images.unsplash.com/photo-1776945537888-bfcb5ad2da16?auto=format&fit=crop&w=1100&q=85" data-fallback="https://images.unsplash.com/photo-1676294537982-89bca9f84dc0?auto=format&fit=crop&w=1100&q=85" alt="Soft plush toy collection" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)">
+          </div><div class="product-info"><div class="product-meta">Soft toys · All ages</div><h3 class="product-title">Milo the Soft Bunny</h3><div class="product-bottom"><div class="price">PKR 1,890<small>Demo price</small></div><button class="add-btn" data-add="milo" aria-label="Add Milo to bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+          </article>
+          <article class="product-card" data-category="creative" data-name="mini makers art studio creative kit"><div class="product-art art-artkit"><span class="product-label">Make something</span><button class="wish" aria-label="Add Mini Makers to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 8.7c0 5.2-8.8 11-8.8 11S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.3Z"/></svg></button>
+            <img class="product-photo" src="https://images.unsplash.com/photo-1771440047710-0cecac3c9df2?auto=format&fit=crop&w=1100&q=85" data-fallback="https://images.unsplash.com/photo-1676294537982-89bca9f84dc0?auto=format&fit=crop&w=1100&q=85" alt="Creative art and craft supplies" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)">
+          </div><div class="product-info"><div class="product-meta">Creative · Ages 5+</div><h3 class="product-title">Mini Makers Art Studio</h3><div class="product-bottom"><div class="price">PKR 2,950<small>Demo price</small></div><button class="add-btn" data-add="makers" aria-label="Add Mini Makers to bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+          </article>
+          <article class="product-card" data-category="outdoor" data-name="skyline rainbow kite outdoor flying toy">
+            <div class="product-art art-kite"><span class="product-label">Outdoor favourite</span><button class="wish" aria-label="Add Skyline Kite to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.8 8.7c0 5.2-8.8 11-8.8 11S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.8 2.3Z"/></svg></button>
+              <img class="product-photo" src="https://images.unsplash.com/photo-1757743066599-193b467c35f1?auto=format&fit=crop&w=1100&q=85" data-fallback="https://images.unsplash.com/photo-1527612820672-5b56351f7346?auto=format&fit=crop&w=1000&q=85" alt="Colourful kite flying outdoors" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)">
+            </div><div class="product-info"><div class="product-meta">Outdoor · Ages 5+</div><h3 class="product-title">Skyline Rainbow Kite</h3><div class="product-bottom"><div class="price">PKR 1,650<small>Demo price</small></div><button class="add-btn" data-add="kite" aria-label="Add Skyline Kite to bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+          </article>
+        </div>
+        <div class="catalog-note">Concept catalogue · Product names, visuals and prices are illustrative placeholders.</div>
+      </div>
+    </section>
+
+    <section class="manifesto container" id="story">
+      <div class="manifesto-card reveal"><div><div class="kicker">A little more considered</div><h2>Not just more toys.<br><em>More to discover.</em></h2></div><div><p>We believe the best finds invite a second look. Rivoki brings together playful design, curious ideas and clever little details in one easy-to-explore place.</p><a class="text-link" href="#categories">See what makes us different <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div><div class="manifesto-orbit"><div class="orbit-core"><svg viewBox="0 0 64 64" fill="none"><path d="M32 4 38 26 60 32 38 38 32 60 26 38 4 32 26 26 32 4Z" fill="currentColor"/><circle cx="49" cy="13" r="4" fill="#174d48"/></svg></div></div></div>
+    </section>
+
+    <section class="section container" style="padding-top:0">
+      <div class="section-head reveal"><div><div class="kicker">Explore by mood</div><h2>Play your way.</h2></div><p class="section-intro">Some days call for building. Some call for making. And some just need a little unexpected fun.</p></div>
+      <div class="curated-grid reveal">
+        <article class="curated-card dark"><div><div class="small-label">Collection 01 / Think & build</div><h3>For the curious minds.</h3><p>Hands-on discoveries, clever puzzles and ideas that take shape.</p></div><a class="text-link" href="#shop" data-go-filter="building">Explore build & STEM <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><div class="curated-art"><svg viewBox="0 0 200 220" fill="none"><path d="m24 135 50-34 52 29-51 35Z" fill="#d8a86d" stroke="#765e43" stroke-width="3"/><path d="m24 135 51 30v42l-51-28Z" fill="#b98252" stroke="#765e43" stroke-width="3"/><path d="m75 165 51-35v43l-51 34Z" fill="#e5c58b" stroke="#765e43" stroke-width="3"/><path d="m84 86 30-21 33 19-32 22Z" fill="#8ea9b7" stroke="#536f7e" stroke-width="3"/><path d="m84 86 31 20v31l-31-18Z" fill="#63879b" stroke="#536f7e" stroke-width="3"/><path d="m115 106 32-22v31l-32 22Z" fill="#c6d8d8" stroke="#536f7e" stroke-width="3"/><circle cx="151" cy="57" r="17" fill="#d7eb73"/><path d="m151 46 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z" fill="#496b5b"/></svg></div></article>
+        <article class="curated-card warm"><div><div class="small-label">Collection 02 / Little comforts</div><h3>For the softer side.</h3><p>Thoughtful companions and small gifts with a little personality.</p></div><a class="text-link" href="#shop" data-go-filter="soft">Meet the soft toys <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><div class="curated-art"><svg viewBox="0 0 180 215" fill="none"><path d="M53 63c-8-28-7-46 4-47 12-1 20 25 19 43M116 61c10-28 9-45-2-47-12-2-20 24-19 42" fill="#d5a994" stroke="#805f54" stroke-width="4"/><path d="M65 67c-8-22-6-34 0-33 7 1 12 18 12 32M111 65c8-22 6-34 0-33-7 1-12 18-12 32" fill="#efdbd0"/><ellipse cx="90" cy="120" rx="44" ry="47" fill="#dfb8a6" stroke="#805f54" stroke-width="4"/><circle cx="74" cy="111" r="4" fill="#4e403a"/><circle cx="106" cy="111" r="4" fill="#4e403a"/><path d="m85 124 5 5 5-5M77 147q13 13 26 0" stroke="#805f54" stroke-width="3" stroke-linecap="round"/><path d="M56 151q-20 6-19-15M124 151q20 6 19-15" stroke="#805f54" stroke-width="8" stroke-linecap="round"/><path d="M41 75 24 62M143 82l17-16" stroke="#c68d78" stroke-width="4" stroke-linecap="round"/></svg></div></article>
+      </div>
+    </section>
+
+    <section class="wholesale container" id="wholesale">
+      <div class="wholesale-card reveal"><div class="wholesale-copy"><div class="kicker">For shops & partners</div><h2>Good things are better shared.</h2><p>Looking for toys in volume? Rivoki’s concept catalogue also has room for retailers, gift shops and wholesale enquiries. Get in touch to discuss a product list or a bulk order.</p></div><div class="wholesale-side"><div class="wholesale-badge">RETAIL<br>+ WHOLESALE<br>ENQUIRIES ✳</div><a class="btn" href="#contact">Partner with us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div>
+    </section>
+
+    <section class="faq-section container" id="faq">
+      <div class="faq-layout"><div class="faq-aside reveal"><div class="kicker">The useful details</div><h2 class="section" style="padding:0;font:800 38px/1.05 'Manrope';letter-spacing:-.055em">A few things<br>to know.</h2><p>Clear answers make discovering something new feel a little easier.</p></div><div class="faq-list reveal">
+        <div class="faq-item open"><button class="faq-q"><span>What kind of products does Rivoki feature?</span><span>+</span></button><div class="faq-a"><p>Rivoki is designed as a multi-category toy store concept, featuring RC toys, robots, building sets, puzzles, soft toys, craft kits and other playful finds.</p></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Are the products and prices on this page final?</span><span>+</span></button><div class="faq-a"><p>No. This is a semester-project demo. Product names, artwork, stock status and PKR prices are sample content and should be replaced with verified supplier information before real sales.</p></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Can retailers ask about bulk orders?</span><span>+</span></button><div class="faq-a"><p>Yes. The wholesale section is a placeholder for retailer enquiries. Connect it to a real business email, WhatsApp number or enquiry form before publishing.</p></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Does the shopping bag process real payments?</span><span>+</span></button><div class="faq-a"><p>No. Adding items to the bag works in this demo, but checkout is deliberately not connected to a payment gateway, inventory system or delivery service.</p></div></div>
+      </div></div>
+    </section>
+
+    <section class="newsletter" id="contact"><div class="container newsletter-inner"><div><div class="kicker">Stay in the loop</div><h2>A little discovery in your inbox.</h2><p>Join the list for new finds and collection updates.</p></div><form class="newsletter-form" id="newsletterForm"><input type="email" id="newsletterEmail" placeholder="Your email address" required aria-label="Your email address"><button type="submit">Join the list ↗</button></form></div></section>
+  </main>
+  <footer class="footer"><div class="container"><div class="footer-main"><div class="footer-about"><a class="brand" href="#top"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.7 14.1 9.9 21.3 12l-7.2 2.1L12 21.3l-2.1-7.2L2.7 12l7.2-2.1L12 2.7Z" fill="currentColor"/><circle cx="18.7" cy="5.2" r="1.4" fill="currentColor"/></svg></span><span class="brand-name">RIVOKI<small>PLAY, THOUGHTFULLY</small></span></a><p>A considered collection of clever toys, creative kits and little discoveries for curious minds.</p></div><div class="footer-col"><strong>Explore</strong><a href="#shop">Shop all</a><a href="#categories">Categories</a><a href="#story">Our approach</a><a href="#wholesale">Wholesale</a></div><div class="footer-col"><strong>Need to know</strong><a href="#faq">FAQs</a><a href="#contact">Contact</a><a href="#faq">Shipping information</a><a href="#faq">Returns information</a></div><div class="footer-col"><strong>Follow along</strong><a href="#contact">Instagram ↗</a><a href="#contact">Facebook ↗</a><a href="#contact">TikTok ↗</a></div></div><div class="footer-bottom"><span>© 2026 RIVOKI. Concept website for an academic project.</span><span>Curiosity looks good on you.</span></div><div class="image-credit">Photography shown for design demonstration. Photo sources: <a href="https://unsplash.com/photos/a-remote-control-car-sitting-on-top-of-a-desk-fkYSKFbpERo" target="_blank" rel="noopener">Rainier Ridao</a>, <a href="https://unsplash.com/photos/remote-control-toy-car-on-green-car-track-5Bo6OfopSi0" target="_blank" rel="noopener">Hung Nguyen Phi</a>, <a href="https://unsplash.com/photos/brown-wooden-toy-blocks-GQ327RPuxhI" target="_blank" rel="noopener">Susan Holt Simpson</a>, <a href="https://unsplash.com/photos/assortment-of-cute-plush-toys-and-keychains-on-display-gZan8TyFtFA" target="_blank" rel="noopener">Trista Le</a>, <a href="https://unsplash.com/photos/hands-working-on-a-craft-project-with-art-supplies-pTKhYoQhJD4" target="_blank" rel="noopener">Darien Attridge</a>, <a href="https://unsplash.com/photos/a-colorful-kite-flying-against-a-cloudy-sky-r0Z3JC6rMn0" target="_blank" rel="noopener">Christian Lue</a> · Images are demo photography; replace with approved supplier photos before commercial use.</div></div></footer>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true"><div class="drawer-head"><strong>Your bag <span id="drawerItemCount">(0)</span></strong><button class="close-btn" id="cartClose" aria-label="Close shopping bag">×</button></div><div class="cart-items" id="cartItems"><div class="cart-empty"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h16l1 13H3L4 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><div>Your bag is waiting for a little wonder.</div></div></div></div><div class="drawer-foot"><div class="subtotal"><span>Subtotal</span><span id="cartSubtotal">PKR 0</span></div><button class="checkout-btn" id="checkoutBtn">Continue to checkout</button><p>Demo experience only · No payment will be taken.</p></div></aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const PRODUCTS = {
+      drift:{name:'Drift X Remote Control Racer',price:3490,category:'RC & Tech',bg:'#e3e9df',art:'car',image:'https://images.unsplash.com/photo-1519314069741-9f69a9daddfa?auto=format&fit=crop&w=1100&q=85',fallback:'https://images.unsplash.com/photo-1527612820672-5b56351f7346?auto=format&fit=crop&w=1000&q=85'},
+      orbit:{name:'Orbit Mini Quadcopter',price:7900,category:'RC & Tech',bg:'#e4e5ed',art:'drone',image:'https://images.unsplash.com/photo-1743357017918-84b2530f4cdb?auto=format&fit=crop&w=1100&q=85',fallback:'https://images.unsplash.com/photo-1616857002717-d337600d15ac?auto=format&fit=crop&w=1100&q=85'},
+      buildlab:{name:'BuildLab Magnetic Tiles · 60 pcs',price:4250,category:'Build & STEM',bg:'#efe6d8',art:'tiles',image:'https://m.media-amazon.com/images/I/81%2Bh7Sz1DAL._AC_SL1500_.jpg',fallback:'https://images.unsplash.com/photo-1568828668638-b1b4014d91a2?auto=format&fit=crop&w=1100&q=85'},
+      robopal:{name:'Robo Pal Interactive Bot',price:5600,category:'RC & Tech',bg:'#dde9e8',art:'robot',image:'https://images.unsplash.com/photo-1603356033288-acfcb54801e6?auto=format&fit=crop&w=1100&q=85',fallback:'https://images.unsplash.com/photo-1616857002717-d337600d15ac?auto=format&fit=crop&w=1100&q=85'},
+      neocube:{name:'NeoCube Speed Puzzle',price:1250,category:'Build & STEM',bg:'#f0e2dc',art:'cube',image:'https://www.variantes.com/36840-large_default/cube-3x3-twisty-stickerless.jpg',fallback:'https://images.unsplash.com/photo-1668626781268-8b988c940dc7?auto=format&fit=crop&w=1100&q=85'},
+      milo:{name:'Milo the Soft Bunny',price:1890,category:'Soft Toys',bg:'#e8e8dc',art:'bunny',image:'https://images.unsplash.com/photo-1776945537888-bfcb5ad2da16?auto=format&fit=crop&w=1100&q=85',fallback:'https://images.unsplash.com/photo-1676294537982-89bca9f84dc0?auto=format&fit=crop&w=1100&q=85'},
+      makers:{name:'Mini Makers Art Studio',price:2950,category:'Creative',bg:'#e5e9d7',art:'artkit',image:'https://images.unsplash.com/photo-1771440047710-0cecac3c9df2?auto=format&fit=crop&w=1100&q=85',fallback:'https://images.unsplash.com/photo-1676294537982-89bca9f84dc0?auto=format&fit=crop&w=1100&q=85'},
+      kite:{name:'Skyline Rainbow Kite',price:1650,category:'Outdoor',bg:'#e4e9d5',art:'kite',image:'https://images.unsplash.com/photo-1757743066599-193b467c35f1?auto=format&fit=crop&w=1100&q=85',fallback:'https://images.unsplash.com/photo-1527612820672-5b56351f7346?auto=format&fit=crop&w=1000&q=85'}
+    };
+    const cart = {};
+    const fmt = n => 'PKR ' + n.toLocaleString('en-PK');
+    const toast = document.getElementById('toast');let toastTimer;
+    function notify(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2300)}
+    function updateCart(){
+      const count=Object.values(cart).reduce((a,b)=>a+b,0);document.getElementById('cartCount').textContent=count;document.getElementById('drawerItemCount').textContent='('+count+')';
+      const items=document.getElementById('cartItems');const keys=Object.keys(cart).filter(k=>cart[k]>0);let subtotal=0;
+      if(!keys.length){items.innerHTML='<div class="cart-empty"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h16l1 13H3L4 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><div>Your bag is waiting for a little wonder.</div></div></div>'}
+      else{items.innerHTML=keys.map(k=>{const p=PRODUCTS[k];subtotal+=p.price*cart[k];return `<div class="cart-row"><div class="cart-thumb" style="background:${p.bg}"><img src="${p.image}" data-fallback="${p.fallback || ''}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="handleBrokenImage(this)"></div><div><strong>${p.name}</strong><small>${fmt(p.price)} · Qty ${cart[k]}</small></div><button class="remove-item" data-remove="${k}">Remove</button></div>`}).join('')}
+      document.getElementById('cartSubtotal').textContent=fmt(subtotal);
+    }
+    function openCart(){document.getElementById('cartDrawer').classList.add('show');document.getElementById('drawerOverlay').classList.add('show');document.getElementById('cartDrawer').setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+    function closeCart(){document.getElementById('cartDrawer').classList.remove('show');document.getElementById('drawerOverlay').classList.remove('show');document.getElementById('cartDrawer').setAttribute('aria-hidden','true');document.body.style.overflow=''}
+    document.addEventListener('click',e=>{
+      const add=e.target.closest('[data-add]');if(add){const key=add.dataset.add;cart[key]=(cart[key]||0)+1;updateCart();notify(PRODUCTS[key].name+' added to your bag');return}
+      const remove=e.target.closest('[data-remove]');if(remove){delete cart[remove.dataset.remove];updateCart();notify('Item removed from your bag');return}
+      const filter=e.target.closest('[data-filter]');if(filter){const value=filter.dataset.filter;setFilter(value);if(filter.classList.contains('category-card'))document.getElementById('shop').scrollIntoView({behavior:'smooth'});return}
+      const go=e.target.closest('[data-go-filter]');if(go){e.preventDefault();setFilter(go.dataset.goFilter);document.getElementById('shop').scrollIntoView({behavior:'smooth'});return}
+    });
+    function setFilter(value){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter===value));document.querySelectorAll('.product-card').forEach(card=>{card.style.display=(value==='all'||card.dataset.category===value)?'':'none'});document.getElementById('searchInput').value=''}
+    document.getElementById('searchInput').addEventListener('input',e=>{const q=e.target.value.toLowerCase().trim();document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all'&&!q));document.querySelectorAll('.product-card').forEach(card=>{const visible=card.dataset.name.includes(q)||card.querySelector('.product-title').textContent.toLowerCase().includes(q);card.style.display=visible?'':'none'})});
+    document.getElementById('cartOpen').addEventListener('click',openCart);document.getElementById('cartClose').addEventListener('click',closeCart);document.getElementById('drawerOverlay').addEventListener('click',closeCart);document.getElementById('checkoutBtn').addEventListener('click',()=>notify('Demo only — connect a real checkout to accept orders.'));
+    document.querySelectorAll('.wish').forEach(btn=>btn.addEventListener('click',()=>{btn.classList.toggle('liked');notify(btn.classList.contains('liked')?'Saved to your favourites':'Removed from favourites')}));
+    document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('mainNav').classList.toggle('open'));
+    document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mainNav').classList.remove('open')));
+    document.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>btn.parentElement.classList.toggle('open')));
+    document.getElementById('newsletterForm').addEventListener('submit',e=>{e.preventDefault();notify('Thanks! Connect an email service to activate sign-ups.');e.target.reset()});
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    /* ================= LIGHT / DARK APPEARANCE ================= */
+    const themeRoot = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    function syncThemeControl(theme){
+      const dark = theme === 'dark';
+      themeToggle.setAttribute('aria-pressed', String(dark));
+      themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      themeToggle.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+      if(themeMeta) themeMeta.setAttribute('content', dark ? '#101a18' : '#f5f4ef');
+    }
+    syncThemeControl(themeRoot.dataset.theme || 'light');
+    themeToggle.addEventListener('click', () => {
+      const next = themeRoot.dataset.theme === 'dark' ? 'light' : 'dark';
+      const rect = themeToggle.getBoundingClientRect();
+      themeRoot.style.setProperty('--theme-x', `${rect.left + rect.width / 2}px`);
+      themeRoot.style.setProperty('--theme-y', `${rect.top + rect.height / 2}px`);
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const apply = () => {
+        themeRoot.dataset.theme = next;
+        try { localStorage.setItem('rivoki-theme', next); } catch (_) {}
+        syncThemeControl(next);
+      };
+      if(document.startViewTransition && !reduceMotion){
+        document.startViewTransition(apply);
+      } else {
+        apply();
+      }
+    });
+
+    updateCart();
+  </script>
+</body>
+</html>
